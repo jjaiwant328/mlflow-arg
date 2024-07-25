@@ -1,0 +1,5 @@
+name: mlc_project 
+
+databricks_spark_job:
+  parameters: ["number"]
+  python_file: "train_arguments.py"
