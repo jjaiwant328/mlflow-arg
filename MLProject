@@ -1,5 +1,5 @@
 name: jai-mlflow-arg 
 
 databricks_spark_job:
-  parameters: ["number"]
+  parameters: ["--number=1003"]
   python_file: "train_arguments.py"
