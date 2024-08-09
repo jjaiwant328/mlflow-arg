@@ -12,5 +12,10 @@ steps:
   displayName: 'Install Databricks CLI'
 
 - script: |
-     python mlflow --experiment-id 1653021744903094
+    pip install mlflow
+    ~/.local/bin/mlflow --help
+  displayName: 'Install Databricks CLI'
+
+- script: |
+     mlflow run https://github.com/jjaiwant328/mlflow-arg  -b databricks --backend-config cluster-spec.json --experiment-id 1653021744903094
   displayName: 'Run MLflow job'
