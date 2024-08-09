@@ -17,7 +17,7 @@ steps:
   displayName: 'Install Databricks CLI'
 
 - script: |
-    pip install mlflow
+    pip install git+https://github.com/mlflow/mlflow.git@refs/pull/12854/merge
     ~/.local/bin/mlflow --version
   displayName: 'Install mlflow'
 
