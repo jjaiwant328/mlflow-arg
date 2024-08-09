@@ -11,6 +11,6 @@ steps:
     ~/.local/bin/databricks -h
   displayName: 'Install Databricks CLI'
 
-- script: mlflow
-    run train_arguments.py. -b databricks --experiment-id 1653021744903094
+- script: |
+     ~/.local/bin/mlflow run train_arguments.py -b databricks --backend-config cluster-spec.json --experiment-id 1653021744903094
   displayName: 'Run MLflow job'
