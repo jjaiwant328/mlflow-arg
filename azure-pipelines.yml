@@ -16,13 +16,12 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
-    displayName: 'Use Python $(python.version)'
+  displayName: 'Use Python $(python.version)'
 
 - script: Install dependencies
     pip install -U databricks-cli
-    displayName: 'Installing databricks CLI'
+  displayName: 'Installing databricks CLI'
 
 - script: Run mlflow
-    mlflow run https://github.com/jjaiwant328/mlflow-arg  -b databricks --backend-config cluster-spec.json --experiment-id 1653021744903094
-    displayName: 'Run MLflow job'
- 
+    python -m train_arguments.py
+  displayName: 'Run MLflow job'
