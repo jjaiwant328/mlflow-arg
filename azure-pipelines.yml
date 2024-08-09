@@ -3,7 +3,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-20.04'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - script: |
@@ -13,8 +13,8 @@ steps:
 
 - script: |
     pip install mlflow
-    ~/.local/bin/mlflow --help
-  displayName: 'Install Databricks CLI'
+    ~/.local/bin/mlflow --version
+  displayName: 'Install mlflow'
 
 - script: |
      mlflow run https://github.com/jjaiwant328/mlflow-arg  -b databricks --backend-config cluster-spec.json --experiment-id 1653021744903094
